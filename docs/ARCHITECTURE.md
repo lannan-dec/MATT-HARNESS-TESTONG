@@ -6,7 +6,7 @@ The one living map of this repository: components, flows, boundaries and invaria
 
 ## What this repository is
 
-A trial repository for the agentic development harness: it holds the harness itself and no application code yet. It is for the person testing how coding agents from several vendors behave under the harness.
+A trial repository for the agentic development harness: it holds the harness itself and one placeholder function that exercises the test and coverage gates. It is for the person testing how coding agents from several vendors behave under the harness.
 
 ## Layout
 
@@ -17,6 +17,7 @@ A trial repository for the agentic development harness: it holds the harness its
 | `.githooks/`, `.github/` | git hooks and the CI gate | `AGENTS.md` section 2 |
 | `.agents/skills/` | installed, pinned skills | `skills-lock.json` |
 | `docs/` | map, ADRs, memory, plans, session records | `AGENTS.md` section 3 |
+| `src/`, `tests/`, `pytest.ini` | the proof function `greet` and its tests; `pytest.ini` puts `src/` on the import path | `docs/plans/PLAN-proof-greet-2610151315.md` |
 
 ## Flows
 
@@ -26,6 +27,8 @@ A trial repository for the agentic development harness: it holds the harness its
 
 - **Enforcement lives in git and CI.** Hooks and the `gates` workflow run the lint, not any vendor hook. Bought by: the harness adoption decision (docs/adr/0001-adopt-harness.md).
   <!-- verify: exists AGENTS.md -->
+  <!-- verify: exists src/greet.py -->
+  <!-- verify: exists tests/test_greet.py -->
   <!-- verify: exists docs/adr/README.md -->
   <!-- verify: exists docs/memory/MEMORY.md -->
   <!-- verify: exists docs/sessions/README.md -->
@@ -37,4 +40,4 @@ A trial repository for the agentic development harness: it holds the harness its
 
 ## Deliberately not built yet
 
-- Application code: add when the first real feature is planned.
+- Real application code: replace `src/greet.py` when the first real feature is planned.
