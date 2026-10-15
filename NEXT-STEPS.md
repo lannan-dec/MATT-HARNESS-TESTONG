@@ -24,7 +24,7 @@ Rewritten at every `harness-close`. Assume the next session knows nothing that i
 1. Pytest exits 5 with no tests and `gates` fails; the proof change supplies the first test.
 2. Hooks must stay executable (`chmod +x .githooks/*`) or git silently skips them; a fresh clone also needs `git config core.hooksPath .githooks`.
 3. Vendor skill links are symlinks on macOS; `.gitignore` entries for them must not end in a slash.
-4. GitHub did not start `gates` on git pushes to `bootstrap`; it ran only after the PR was closed and reopened. If `gh pr checks` is empty after a minute, close and reopen the PR.
+4. GitHub started no `gates` run for the first pushes of a new branch until the workflow was registered (a run on any branch, here via a probe); after that, pushes and PRs triggered it normally. If `gh pr checks` stays empty after a minute, close and reopen the PR.
 5. Cursor has no transcript export, so `save_transcript.py` copies nothing for this host; note it in each session log.
 
 ## Kickoff text (paste into the next session)
