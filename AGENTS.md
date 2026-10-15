@@ -124,4 +124,24 @@ A rule enters Part A only if it names (a) the value it adds, (b) how it is enfor
 - Layout: see `docs/ARCHITECTURE.md`
 
 <!-- bmad:context -->
+<!-- Verified 2026-10-15 against 799d1e8. Managed by bmad-project-context; edits inside this block are replaced on refresh. Keep anything you want preserved outside the markers. -->
+
+## MATT HARNESS TESTONG
+
+Trial repository for the agentic development harness; no application code yet. Python 3.12 with pytest as a placeholder stack, tracker is GitHub Issues. Rules and process live in Part A of this file; the map is `docs/ARCHITECTURE.md`.
+
+## Policy
+
+- Never push to `main`; it is protected and requires the `gates` check. Push a branch and open a PR with `gh pr create`.
+
+## Running and verifying
+
+- Run tests with `uv run --with pytest --with pytest-cov pytest --cov --cov-branch --cov-report=xml`; bare `pytest` is not installed here and CI installs its own copy.
+- With no test files pytest exits 5 and fails the `gates` job; every PR that reaches CI must carry at least one test.
+- Python 3.12 via `uv`; the lint and hooks call `python`/`python3`, which resolve to uv's shim in `~/.local/bin`.
+
+## Where things are
+
+- Hooks and CI call `scripts/harness_lint.py`; coverage floors are in `coverage_baseline.json`.
+
 <!-- /bmad:context -->
